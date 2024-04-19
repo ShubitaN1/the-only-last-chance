@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>სახეთა გამოცნობა</title>
+		<style type="text/css">
+		header{
+			background-color: #4dff4d;
+			height: 80px;
+			text-align: center;
+		}
+		footer{
+			background-color: #4dff4d;
+			height: 30px;
+			text-align: center;
+		}
+		img{
+			height: 100px;
+			border: 3px solid white;
+		}
+		</style>
+	</head>
+	<body>
+		<header>
+		   <h1>სახეთა გამოცნობა</h1>
+		</header>
+		<section>
+			<article>
+				<img src="images/Chamomile_Violet.png">
+				<img src="images/Chamomile_white.png" >
+				<img src="images/Peony_yellow.png" >
+				<img src="images/Landish_Violet.png" >
+				<img src="images/Rose_pink.png" >
+				  <br><input type="text" id="proprt" 
+				  placeholder="შემოიტანეთ ობიექტის მახასიათებელი(დასახელება ან ფერი)" size="50">
+				  <button onclick="find();">Find Object</button>
+				  <script>
+					let ImagesObjects = [
+										  {Name: "Chamomile", color: "violet"}
+										 ,{Name: "Chamomile", color: "white"}
+										 ,{Name: "Peony", color: "yellow"}
+										 ,{Name: "Landish", color: "violet"}
+										 ,{Name: "Rose", color: "pink"}
+										]
+					
+					function find(){
+						//alert(document.getElementById("proprt").value);
+						let F_ImagesObjects = document.getElementById("proprt").value;
+						
+						for( i = 0; i < ImagesObjects.length; i++ ){
+							document.images[i].style.border = "0px solid white";
+						}
+						
+						for(i = 0; i < ImagesObjects.length; i++){
+							console.log(ImagesObjects[i].color);
+							if(  F_ImagesObjects == ImagesObjects[i].color 
+							  || F_ImagesObjects == ImagesObjects[i].Name){
+							  document.images[i].style.border = "3px solid red";
+							}
+						}
+					}
+				  
+				  </script>
+				  <br><br>
+				  <table border=0>
+				    <caption>ობიექტის მახასიათებლები</caption>
+					<tr><th>დასახელება</th><th>ფერი</th></tr>
+					<tr><td>Chamomile</td><td>violet</td></tr>
+					<tr><td>Chamomile</td><td>white</td></tr>
+					<tr><td>Peony</td><td>yellow</td></tr>
+					<tr><td>Landish</td><td>violet</td></tr>
+					<tr><td>Rose</td><td>pink</td></tr>
+				  </table>
+			</article>
+		</section>
+		<footer>  
+			<h3>&copy;ყველა უფლედა დაცულია 2024</h3>
+		</footer>
+	</body>
+</html>
